@@ -1,0 +1,13 @@
+name: automatationdn-dso
+on:
+ push:
+  branches: [develop]
+ workflow_dispatch:  
+jobs:
+ mydetails:
+  runs-on: windows-latest
+  steps:
+   - name: person-details
+     run: | 
+       echo "my surname is madamanchi"
+       echo "my name is swarupa Rani"
