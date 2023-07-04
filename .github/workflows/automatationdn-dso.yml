@@ -2,18 +2,21 @@ name: automatationdn-dso
 on:
  push:
   branches: [develop]
+  
  workflow_dispatch:  
+env:
+ BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 jobs:
  mydetails:
   runs-on: windows-latest
-  
   steps:
    - name: print branch name
      run: | 
-       echo ${{ github-ref_name }}
+       echo ${{ env.BRANCH_NAME }}
 
-   - uses: actions/checkout@v3
+   - uses: actions/checkout@v3  
    - name: person-details
      run: | 
        echo "my surname is madamanchi"
        echo "my name is swarupa Rani"
+      
