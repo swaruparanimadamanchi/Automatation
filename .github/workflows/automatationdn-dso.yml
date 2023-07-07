@@ -21,6 +21,8 @@ jobs:
        echo "my name is swarupa Rani"
    - name: get the branches list
      run: |
-      $weekAgo = (Get-Date).AddDays(-7).ToString("yyyy-MM-dd")
+      #$weekAgo = (Get-Date).AddDays(-7).ToString("yyyy-MM-dd")
       #git for-each-ref --format='%(refname:short)' --sort=-committerdate --since="$weekAgo"
+      branches = git for-each-ref --format='%(refname:short)' refs/remotes/origin
+      echo $branches
       
